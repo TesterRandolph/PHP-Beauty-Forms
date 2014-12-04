@@ -4,9 +4,22 @@ PHP-Beauty-Forms
 This project is based on PFBC (PHP Form Builder Class). The goal of this project is:
 
 * Maintain an upgraded functional repository to create forms with PHP;
-* Must be modular - in the sense that it can be used in any PHP project;
-* Must be paired with the last version of Twitter Bootstrap, jQuery and PHP;
-* The only dependencies should be JQuery and Bootstrap. The project must avoid being dependent of any other class or library.
+* Must be modular, in the sense that it can be used in any PHP project;
+* Must be updated with the last version of Twitter Bootstrap, jQuery and PHP;
+* The only dependencies of the project should be JQuery and Bootstrap;
+* Must have Web 2.0 appearance, with improved usability and user experience;
+* It is designed for PHP developers: the library must encapsulate all required CSS, Javascript and HTML.
+
+How it works
+================
+
+PHP Beauty Forms works by providing an easy to use library to create web forms in PHP. It uses Twitter Bootstrap and JQuery to accomplish that.
+
+* Elements: It can create a variety of elements including Textboxes, Textareas, Checkboxes, Selectboxes, Date inputs, Color inputs and so on. The current version has more than 34 elements. Additionaly, it has support for 13 HTML 5 form elements: Phone, Search, Url, Email, DateTime, Date, Month, Week, Time, DateTimeLocal, Number, Range, and Color. Each of these fallback to textboxes in the event that the HTML5 input type isn't supported in the user's web browser. 
+
+* Validation: For browsers that support HTML5 it will do simple client side data validation before the form is submitted (for example, required field). But most of validations are server-sided based (look at Validation classes inside Validation folder). To do the server side validation you must call the method Form::isValid() of PFB library when the form is submitted, redirecting the page if it returns false. In this case, when the form is show again, it will be automatically filled with data recovered from the user session, and validation errors will be presented in red.
+
+* Views: With the Views functionality it is possible to arrange form elements in horizontal, vertical, inline or search layouts.
 
 Installation
 ============
@@ -21,7 +34,7 @@ You will need to include the following folders in your include path:
 - PBF/Validation
 - PBF/View
 
-If you use an CMS or framework that require to register namespaces, you should register the following namespaces:
+If you use a CMS or framework that require to register namespaces, you should register the following namespaces:
 
 - PBF
 - PBF\Element
@@ -32,7 +45,7 @@ If you use an CMS or framework that require to register namespaces, you should r
 Motivations
 ===========
 
-I started this project because I think PFBC is an awesome library but, unfortunately, is not being maintained anymore.
+I started this project because I think PFBC is an awesome library but, unfortunately, almost two years has passed without a single commit, so I decided to maintain it.
 
 Example of use
 ==============
